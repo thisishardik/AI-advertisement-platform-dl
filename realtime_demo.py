@@ -1,6 +1,3 @@
-"""
-Face detection
-"""
 import cv2
 import os
 from time import sleep
@@ -26,7 +23,7 @@ class FaceCV(object):
             cls.instance = super(FaceCV, cls).__new__(cls)
         return cls.instance
 
-    def __init__(self, depth=15, width=10, face_size=64):
+    def __init__(self, depth=16, width=8, face_size=64):
         self.face_size = face_size
         self.model = WideResNet(face_size, depth=depth, k=width)()
         model_dir = os.path.join(
